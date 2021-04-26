@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloASPNET", "HelloASPNET\HelloASPNET.csproj", "{F3B5E8E2-1217-4223-BE9D-6D9EE35D725F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloASPNET", "HelloASPNET\HelloASPNET.csproj", "{F3B5E8E2-1217-4223-BE9D-6D9EE35D725F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWebApp", "HelloWebApp\HelloWebApp.csproj", "{21F77CAE-C21C-4300-A4DA-63E4E006C2E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWebApp", "HelloWebApp\HelloWebApp.csproj", "{21F77CAE-C21C-4300-A4DA-63E4E006C2E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMVC", "HelloMVC\HelloMVC.csproj", "{7842353E-9267-4799-9403-F23A87161E3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloMVC", "HelloMVC\HelloMVC.csproj", "{7842353E-9267-4799-9403-F23A87161E3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWebAngular", "HelloWebAngular\HelloWebAngular.csproj", "{7AD01ABA-11E5-40C0-A516-487248EE9DA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWebAngular", "HelloWebAngular\HelloWebAngular.csproj", "{7AD01ABA-11E5-40C0-A516-487248EE9DA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleWeb", "PeopleWeb\PeopleWeb.csproj", "{3501CF07-DB90-4233-8AC9-56052AE9A439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7AD01ABA-11E5-40C0-A516-487248EE9DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AD01ABA-11E5-40C0-A516-487248EE9DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AD01ABA-11E5-40C0-A516-487248EE9DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3501CF07-DB90-4233-8AC9-56052AE9A439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3501CF07-DB90-4233-8AC9-56052AE9A439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3501CF07-DB90-4233-8AC9-56052AE9A439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3501CF07-DB90-4233-8AC9-56052AE9A439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
