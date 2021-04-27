@@ -1,0 +1,2 @@
+﻿This app display pictures of cute cats.
+You can update picture, name, age and other information about each cat.
