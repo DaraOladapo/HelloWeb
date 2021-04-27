@@ -28,5 +28,9 @@ namespace PeopleWeb.Controllers
             return View(person);
 
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
