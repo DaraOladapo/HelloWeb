@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWebAngular", "HelloWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleWeb", "PeopleWeb\PeopleWeb.csproj", "{3501CF07-DB90-4233-8AC9-56052AE9A439}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basics", "Basics", "{C3CBCFF2-9A82-4338-86CE-CB024C56BD15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3B5E8E2-1217-4223-BE9D-6D9EE35D725F} = {C3CBCFF2-9A82-4338-86CE-CB024C56BD15}
+		{21F77CAE-C21C-4300-A4DA-63E4E006C2E4} = {C3CBCFF2-9A82-4338-86CE-CB024C56BD15}
+		{7842353E-9267-4799-9403-F23A87161E3B} = {C3CBCFF2-9A82-4338-86CE-CB024C56BD15}
+		{7AD01ABA-11E5-40C0-A516-487248EE9DA1} = {C3CBCFF2-9A82-4338-86CE-CB024C56BD15}
+		{3501CF07-DB90-4233-8AC9-56052AE9A439} = {C3CBCFF2-9A82-4338-86CE-CB024C56BD15}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF60283E-F1ED-4FA0-B14C-E476D1282B41}
