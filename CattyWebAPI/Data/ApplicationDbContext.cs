@@ -5,12 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CattyWebApp.Data
+namespace CattyWebAPI.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
         public DbSet<Cat> Cats { get; set; }
-        public DbSet<Kitten> Kittens { get; set; }
+        public DbSet<Kitten> Kittens{ get; set; }
     }
 }

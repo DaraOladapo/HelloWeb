@@ -1,11 +1,10 @@
 ﻿@model IEnumerable<CattyWebLibary.Models.Kitten>
 
 @{
-    ViewData["Title"] = "Kittens";
+    ViewData["Title"] = "Index";
 }
 
-<h1>@ViewBag.CatName's Kittens</h1>
-
+<h1>Index</h1>
 
 <table class="table">
     <thead>
@@ -46,6 +45,13 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Update", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @*@Html.ActionLink("View Cat", "Details", "Cats", new { id = item.Cat.ID })*@
+
                 </td>
             </tr>
         }

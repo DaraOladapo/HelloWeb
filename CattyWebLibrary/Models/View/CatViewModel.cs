@@ -1,8 +1,13 @@
-﻿using System;
+﻿using CattyWebLibary.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CattyWebApp.Models
+namespace CattyWebLibrary.Models.View
 {
-    public class Kitten
+    public class CatViewModel
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -11,7 +16,5 @@ namespace CattyWebApp.Models
         public Size Size { get; set; }
         public string Color { get; set; }
         public DateTime CreatedAt { get; set; }
-
-        public virtual Cat Cat { get; set; }
     }
 }

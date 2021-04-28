@@ -1,6 +1,6 @@
 ﻿using CattyWebApp.Data;
-using CattyWebApp.Models;
-using CattyWebApp.Models.Binding;
+using CattyWebLibary.Models;
+using CattyWebLibary.Models.Binding;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

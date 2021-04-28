@@ -1,14 +1,14 @@
 ﻿using CattyWebApp.Data;
-using CattyWebApp.Models;
+using CattyWebLibary.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace kittentyWebApp.Controllers
+namespace CattyWebApp.Controllers
 {
-    [Route("[Controller]/[Action]")]
+    [Route("[Controller]")]
     public class KittensController : Controller
     {
         private readonly ApplicationDbContext dbContext;
