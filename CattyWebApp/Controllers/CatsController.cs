@@ -43,7 +43,7 @@ namespace CattyWebApp.Controllers
                 Age = bindingModel.Age,
                 Size = bindingModel.Size,
                 Color = bindingModel.Color,
-                PictureURL= "https://th.bing.com/th/id/R80677ad4549c7ab35bc3e3cca9f5fa4e?rik=nlG0uuKC%2fVgkDg&pid=ImgRaw",
+                PictureURL = "https://th.bing.com/th/id/R80677ad4549c7ab35bc3e3cca9f5fa4e?rik=nlG0uuKC%2fVgkDg&pid=ImgRaw",
                 CreatedAt = DateTime.Now
             };
             dbContext.Cats.Add(catToCreate);
@@ -58,10 +58,27 @@ namespace CattyWebApp.Controllers
             var catById = dbContext.Cats.FirstOrDefault(c => c.ID == id);
             return View(catById);
         }
+        [HttpPost]
+        [Route("update/{id:int}")]
+        public IActionResult Update(Cat cat, int id)
+        {
+            var catToUpdate = dbContext.Cats.FirstOrDefault(c => c.ID == id);
+            catToUpdate.Name = cat.Name;
+            catToUpdate.Age = cat.Age;
+            catToUpdate.PictureURL = cat.PictureURL;
+            catToUpdate.Size = cat.Size;
+            catToUpdate.Color = cat.Color;
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
         //DELETE
-        //public IActionResult Delete()
-        //{
-        //    return View();
-        //}
+        [Route("delete/{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            var catToDelete = dbContext.Cats.FirstOrDefault(c => c.ID == id);
+            dbContext.Cats.Remove(catToDelete);
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
