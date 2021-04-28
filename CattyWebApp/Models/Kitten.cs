@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CattyWebApp.Models
 {
-    public class Cat
+    public class Kitten
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -15,6 +12,6 @@ namespace CattyWebApp.Models
         public string Color { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public virtual List<Kitten> Kittens { get; set; }
+        public virtual Cat Cat { get; set; }
     }
 }

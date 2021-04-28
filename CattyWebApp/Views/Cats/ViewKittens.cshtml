@@ -1,14 +1,12 @@
-﻿@model IEnumerable<CattyWebApp.Models.Cat>
+﻿@model IEnumerable<CattyWebApp.Models.Kitten>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Kittens";
 }
 
-<h1>Index</h1>
+<h1>@ViewBag.CatName's Kittens</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -48,14 +46,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Color)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Update", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
-                    @Html.ActionLink("View Kittens", "ViewKittens", new { id = item.ID })|
-                    @Html.ActionLink("Add Kitten", "CreateKitten", new { catID = item.ID })
-
                 </td>
             </tr>
         }
