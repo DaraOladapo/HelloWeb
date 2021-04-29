@@ -10,11 +10,12 @@ namespace CattyWebApp
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, ApplicationDbContext appDbContext)
         {
             Configuration = configuration;
+            dbContext = appDbContext;
         }
-
+        private ApplicationDbContext dbContext;
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -31,6 +32,7 @@ namespace CattyWebApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            dbContext.Database.Migrate();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
