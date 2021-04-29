@@ -2,9 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>881207ec-8141-4514-b19a-75b9d299fbdb</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/3eba6e29-3983-495b-a539-c3c4b43fb90c/resourcegroups/daraoladapo/providers/Microsoft.Insights/components/CattyWebApp</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
