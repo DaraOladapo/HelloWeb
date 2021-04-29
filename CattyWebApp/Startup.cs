@@ -10,10 +10,10 @@ namespace CattyWebApp
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, ApplicationDbContext appDbContext)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            dbContext = appDbContext;
+            //dbContext = appDbContext;
         }
         private ApplicationDbContext dbContext;
         public IConfiguration Configuration { get; }
@@ -32,7 +32,7 @@ namespace CattyWebApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            dbContext.Database.Migrate();
+            //dbContext.Database.Migrate();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
