@@ -8,5 +8,7 @@ namespace CattyWebApp.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Cat> Cats { get; set; }
         public DbSet<Kitten> Kittens { get; set; }
+        public DbSet<Vet> Vets { get; set; }
+        public DbSet<Visit> Visits { get; set; }
     }
 }

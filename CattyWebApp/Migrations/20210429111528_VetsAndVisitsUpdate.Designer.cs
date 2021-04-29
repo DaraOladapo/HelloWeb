@@ -3,14 +3,16 @@ using System;
 using CattyWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CattyWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210429111528_VetsAndVisitsUpdate")]
+    partial class VetsAndVisitsUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +108,7 @@ namespace CattyWebApp.Migrations
                     b.Property<int?>("VetID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("VisitDate")
+                    b.Property<DateTime>("VisitData")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("ID");

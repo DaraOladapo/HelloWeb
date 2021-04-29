@@ -3,14 +3,16 @@ using System;
 using CattyWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CattyWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210429111425_VetsAndVisits")]
+    partial class VetsAndVisits
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,7 +93,7 @@ namespace CattyWebApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Vets");
+                    b.ToTable("Vet");
                 });
 
             modelBuilder.Entity("CattyWebLibrary.Models.Visit", b =>
@@ -106,7 +108,7 @@ namespace CattyWebApp.Migrations
                     b.Property<int?>("VetID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("VisitDate")
+                    b.Property<DateTime>("VisitData")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("ID");
@@ -115,7 +117,7 @@ namespace CattyWebApp.Migrations
 
                     b.HasIndex("VetID");
 
-                    b.ToTable("Visits");
+                    b.ToTable("Visit");
                 });
 
             modelBuilder.Entity("CattyWebLibrary.Models.Kitten", b =>

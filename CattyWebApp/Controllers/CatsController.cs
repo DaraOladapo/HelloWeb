@@ -1,6 +1,7 @@
 ﻿using CattyWebApp.Data;
 using CattyWebLibrary.Models;
 using CattyWebLibrary.Models.Binding;
+using CattyWebLibrary.Utility;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace CattyWebApp.Controllers
         {
             dbContext = applicationDbContext;
         }
+        #region Cat
         //READ
         [Route("")]
         public IActionResult Index()
@@ -28,7 +30,6 @@ namespace CattyWebApp.Controllers
             var catById = dbContext.Cats.FirstOrDefault(c => c.ID == id);
             return View(catById);
         }
-
         //CREATE
         [Route("create")]
         public IActionResult Create()
@@ -51,7 +52,37 @@ namespace CattyWebApp.Controllers
             dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        //UPDATE
+        [Route("update/{id:int}")]
+        public IActionResult Update(int id)
+        {
+            var catById = dbContext.Cats.FirstOrDefault(c => c.ID == id);
+            return View(catById);
+        }
+        [HttpPost]
+        [Route("update/{id:int}")]
+        public IActionResult Update(Cat cat, int id)
+        {
+            var catToUpdate = dbContext.Cats.FirstOrDefault(c => c.ID == id);
+            catToUpdate.Name = cat.Name;
+            catToUpdate.Age = cat.Age;
+            catToUpdate.PictureURL = cat.PictureURL;
+            catToUpdate.Size = cat.Size;
+            catToUpdate.Color = cat.Color;
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        //DELETE
+        [Route("delete/{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            var catToDelete = dbContext.Cats.FirstOrDefault(c => c.ID == id);
+            dbContext.Cats.Remove(catToDelete);
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
+        #region Kitten
         //Kitten Section
         //CREATE
         [Route("addkitten/{catID:int}")]
@@ -88,34 +119,38 @@ namespace CattyWebApp.Controllers
             ViewBag.CatName = cat.Name;
             return View(kittens);
         }
-        //UPDATE
-        [Route("update/{id:int}")]
-        public IActionResult Update(int id)
+        #endregion
+        #region Visit
+        [Route("addvisit/{catID:int}")]
+        public IActionResult CreateVisit(int catID)
         {
-            var catById = dbContext.Cats.FirstOrDefault(c => c.ID == id);
-            return View(catById);
+            var cat = dbContext.Cats.FirstOrDefault(c => c.ID == catID);
+            ViewBag.CatName = cat.Name;
+            var pageInject = new AddVisitBindingModel { Vets = dbContext.Vets.ToList().GetViewModels() };
+            return View(pageInject);
         }
         [HttpPost]
-        [Route("update/{id:int}")]
-        public IActionResult Update(Cat cat, int id)
+        [Route("addvisit/{catID:int}")]
+        public IActionResult CreateVisit(AddVisitBindingModel bindingModel, int catID)
         {
-            var catToUpdate = dbContext.Cats.FirstOrDefault(c => c.ID == id);
-            catToUpdate.Name = cat.Name;
-            catToUpdate.Age = cat.Age;
-            catToUpdate.PictureURL = cat.PictureURL;
-            catToUpdate.Size = cat.Size;
-            catToUpdate.Color = cat.Color;
+            var visitToCreate = new Visit
+            {
+                VisitDate = DateTime.Now,
+                Vet = dbContext.Vets.FirstOrDefault(v => v.ID == bindingModel.VetID),
+                Cat = dbContext.Cats.FirstOrDefault(c => c.ID == catID)
+            };
+            dbContext.Visits.Add(visitToCreate);
             dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
-        //DELETE
-        [Route("delete/{id:int}")]
-        public IActionResult Delete(int id)
+        [Route("{id:int}/Visits")]
+        public IActionResult ViewVisits(int id)
         {
-            var catToDelete = dbContext.Cats.FirstOrDefault(c => c.ID == id);
-            dbContext.Cats.Remove(catToDelete);
-            dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            var cat = dbContext.Cats.FirstOrDefault(c => c.ID == id);
+            var Visits = dbContext.Visits.Where(c => c.Cat.ID == id).ToList();
+            ViewBag.CatName = cat.Name;
+            return View(Visits);
         }
+        #endregion
     }
 }

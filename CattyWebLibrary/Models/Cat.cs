@@ -15,6 +15,9 @@ namespace CattyWebLibrary.Models
         public string Color { get; set; }
         public DateTime CreatedAt { get; set; }
 
+
+        //Relationships
+        public List<Visit> Visits { get; set; }
         public virtual List<Kitten> Kittens { get; set; }
     }
 }
