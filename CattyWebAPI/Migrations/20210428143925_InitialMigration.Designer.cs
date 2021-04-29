@@ -19,7 +19,7 @@ namespace CattyWebAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("CattyWebLibary.Models.Cat", b =>
+            modelBuilder.Entity("CattyWebLibrary.Models.Cat", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace CattyWebAPI.Migrations
                     b.ToTable("Cats");
                 });
 
-            modelBuilder.Entity("CattyWebLibary.Models.Kitten", b =>
+            modelBuilder.Entity("CattyWebLibrary.Models.Kitten", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -82,16 +82,16 @@ namespace CattyWebAPI.Migrations
                     b.ToTable("Kittens");
                 });
 
-            modelBuilder.Entity("CattyWebLibary.Models.Kitten", b =>
+            modelBuilder.Entity("CattyWebLibrary.Models.Kitten", b =>
                 {
-                    b.HasOne("CattyWebLibary.Models.Cat", "Cat")
+                    b.HasOne("CattyWebLibrary.Models.Cat", "Cat")
                         .WithMany("Kittens")
                         .HasForeignKey("CatID");
 
                     b.Navigation("Cat");
                 });
 
-            modelBuilder.Entity("CattyWebLibary.Models.Cat", b =>
+            modelBuilder.Entity("CattyWebLibrary.Models.Cat", b =>
                 {
                     b.Navigation("Kittens");
                 });

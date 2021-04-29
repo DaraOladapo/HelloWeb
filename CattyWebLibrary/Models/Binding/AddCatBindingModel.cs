@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CattyWebLibary.Models.Binding
+namespace CattyWebLibrary.Models.Binding
 {
     public class AddCatBindingModel
     {

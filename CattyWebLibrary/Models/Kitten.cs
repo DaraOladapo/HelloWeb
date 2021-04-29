@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CattyWebLibary.Models
+namespace CattyWebLibrary.Models
 {
     public class Kitten
     {

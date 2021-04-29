@@ -1,4 +1,4 @@
-﻿using CattyWebLibary.Models;
+﻿using CattyWebLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

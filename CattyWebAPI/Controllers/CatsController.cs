@@ -1,6 +1,6 @@
 ﻿using CattyWebAPI.Data;
-using CattyWebLibary.Models;
-using CattyWebLibary.Models.Binding;
+using CattyWebLibrary.Models;
+using CattyWebLibrary.Models.Binding;
 using CattyWebLibrary.Models.View;
 using CattyWebLibrary.Utility;
 using Microsoft.AspNetCore.Http;

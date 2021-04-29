@@ -1,4 +1,4 @@
-﻿namespace CattyWebLibary.Models
+﻿namespace CattyWebLibrary.Models
 {
     public enum Size
     {

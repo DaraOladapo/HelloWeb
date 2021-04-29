@@ -1,11 +1,9 @@
 ﻿using CattyWebApp.Data;
-using CattyWebLibary.Models;
-using CattyWebLibary.Models.Binding;
+using CattyWebLibrary.Models;
+using CattyWebLibrary.Models.Binding;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CattyWebApp.Controllers
 {

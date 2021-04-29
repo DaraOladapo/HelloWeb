@@ -1,5 +1,5 @@
 ﻿using CattyWebApp.Models;
-using CattyWebLibary.Models;
+using CattyWebLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
